@@ -37,6 +37,57 @@ CREATE TABLE `users` (
 	$query = $db->query('id', 'users')->execute();
 ?>
 ```
+
+<h2>Use Insert , lastInsertId Medols</h2>
+
+```php
+<?php
+$db->insert('users', "`username` , `member`", ":username , :member")
+            ->bind([
+                'username'=>'Malek Academy',
+                'member'=>1
+                ])
+            ->execute();
+
+if($db->lastInsertId())    
+    echo 'insert successfuly';
+else
+    echo 'insert failed';
+?>
+
+```
+<h2>Use Update Medol</h2>
+
+```php
+<?php
+$db->update('users', "`username` = :username , `member` = :member", 'id', '1')
+        ->bind(
+                [
+                    'username'  => 'Mohammd',
+                    'member'    => 0
+                ]
+            );
+
+if($db->execute())
+    echo 'update successfuly';
+else
+    echo 'update failed';
+?>
+```
+<h2>Use Delete Medol</h2>
+
+```php
+<?php
+$db->delete('users', 'id', ":id")->bind(['id' => 1]);
+
+if($db->execute())
+    echo 'delete successfuly';
+else
+    echo 'delete failed';
+ ?>
+ ```
+ 
+
 <h2>Get Rows Count</h2>
 get rows count with out binding
 
@@ -97,59 +148,13 @@ echo '</pre>';
 ?>
 
 ```
-
-<h2>Use Insert , lastInsertId Medols</h2>
-
-```php
-<?php
-$db->insert('users', "`username` , `member`", ":username , :member")
-            ->bind([
-                'username'=>'Malek Academy',
-                'member'=>1
-                ])
-            ->execute();
-
-if($db->lastInsertId())    
-    echo 'insert successfuly';
-else
-    echo 'insert failed';
-?>
-
-```
-<h2>Use Update Medol</h2>
-
-```php
-<?php
-$db->update('users', "`username` = :username , `member` = :member", 'id', '1')
-        ->bind(
-                [
-                    'username'  => 'Mohammd',
-                    'member'    => 0
-                ]
-            );
-
-if($db->execute())
-    echo 'update successfuly';
-else
-    echo 'update failed';
-?>
-```
-<h2>Use Delete Medol</h2>
-
-```php
-<?php
-$db->delete('users', 'id', ":id")->bind(['id' => 1]);
-
-if($db->execute())
-    echo 'delete successfuly';
-else
-    echo 'delete failed';
- ?>
- ```
  
 <h2>Close Database Connection</h2>
+
 ```php
+
 <?php
 $db->close();
 ?>
+
 ```
