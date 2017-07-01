@@ -20,10 +20,6 @@
 - Make sure the DB_USER only has permission for command your using
 */
 
-// Require Files;
-
-require_once 'Config.php';
-require_once 'PDO_Interface.php';
 
 class PDO_Connect implements PDO_Intserface{
     
