@@ -175,6 +175,16 @@ class PDO_Connect implements PDO_Intserface{
     public function fetchAll(){
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+  
+    /*
+     * Close Databse Connect
+     * Use It When you Want Close Connection
+     */
+  
+    public function close(){
+        $this->connection = NULL;
+    }
+  
 }
 
 ?>
