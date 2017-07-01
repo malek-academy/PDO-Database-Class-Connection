@@ -147,3 +147,9 @@ else
  ?>
  ```
  
+<h2>Close Database Connection</h2>
+```php
+<?php
+$db->close();
+?>
+```
