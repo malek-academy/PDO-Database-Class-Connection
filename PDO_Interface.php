@@ -32,6 +32,7 @@ interface PDO_Intserface{
     
     public function delete($table,$colum , $value);
     
+    public function close();
 }
 
 ?>
