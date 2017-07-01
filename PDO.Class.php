@@ -177,8 +177,4 @@ class PDO_Connect implements PDO_Intserface{
     }
 }
 
-// Create PDO_Connect Class
-
-$db = new PDO_Connect();
-
 ?>
