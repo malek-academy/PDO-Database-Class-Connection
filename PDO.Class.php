@@ -57,7 +57,7 @@ class PDO_Connect implements PDO_Intserface{
                     $this->options
                     );
                     
-        } catch (Exception $error) {
+        } catch (PDOException $error) {
             $this->error = $error->getMessage();
             die($this->error);
         }
